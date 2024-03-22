@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 import requests
 import os
 import json
-import yaml
+
 
 load_dotenv()
 
@@ -41,20 +41,3 @@ else:
     # Print an error message if the request was not successful
     print('Error:', response.status_code)
 
-
-# TODO
-#
-#   create a loop for every key inside data block 
-#   and do a request puting this data to the namespace of the file
-#   and using the name as example
-#
-
-# Specify the path to the YAML file
-yaml_file_path = 'secret.yaml'
-
-# Open the YAML file and load its contents
-with open(yaml_file_path, 'r') as file:
-    yaml_data = yaml.safe_load(file)
-
-# Print the loaded YAML data (as a Python dictionary)
-print(yaml_data['data'])
