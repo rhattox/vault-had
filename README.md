@@ -1,6 +1,8 @@
 # vault-had
 Vault Http Automated Deployer
 
+This is a simple project to automate vault secret creation, this is intended to migrate all secrets from local files (secrets.yaml) to vault files
+
 # How to use it:
 
 Create an enviroment variable file in the root directory
