@@ -20,6 +20,8 @@ It has to have `namespace` metadata. If it doesn't it will assume the variable `
 
 
 metadata.name --> Will be used as the secret name under a kv store, which means...
+
+
 metadata.namespace --> will be the KV secret path
 
 
