@@ -19,10 +19,10 @@ DEFAULT_NAMESPACE=
 It has to have `namespace` metadata. If it doesn't it will assume the variable `DEFAULT_NAMESPACE`.
 
 
-metadata.name --> Will be used as the secret name under a kv store, which means...
+`metadata.name` --> Will be used as the secret name under a kv store, which means...
 
 
-metadata.namespace --> will be the KV secret path
+`metadata.namespace` --> will be the KV secret path
 
 
 secrets --> metadata.namespace --> metadata.name
