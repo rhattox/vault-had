@@ -11,7 +11,7 @@ def call_vault_api(vault_address,vault_port,vault_root_token,data):
     json_data = json.dumps(curl_obj)
     # print(json_data)
     # var_url = f"http://{vault_address}:{vault_port}/v1/kv/data/example"
-    var_url = f"http://{vault_address}:{vault_port}/v1/kv/data/{data['namespace']}"
+    var_url = f"http://{vault_address}:{vault_port}/v1/{data['namespace']}/data/{data['name']}"
     var_headers = {
         "X-Vault-Token": f"{vault_root_token}",
         "Content-Type": "application/json"
