@@ -1,6 +1,21 @@
 import requests
 import json
 
+def check_vault_secret_engine(vault_address,vault_port,vault_root_token, data):
+    # print(data)
+    var_url = f"http://{vault_address}:{vault_port}/v1/{data['namespace']}"
+    var_headers = {
+        "X-Vault-Token": f"{vault_root_token}"
+    }
+    response = requests.get(var_url, headers=var_headers)
+    if 'errors' in response.json():
+        print(f"ns '{data['namespace']}' doesn't exists")
+        print("You will need to create it manually, then run it again...")
+        return False
+    else:
+        return True
+
+
 def call_vault_api(vault_address,vault_port,vault_root_token,data):
     # print(data)   
     # print(data['namespace'])

@@ -15,5 +15,7 @@ file_array = list_dir.find_secrets_yaml(secrets_dir)
 # print(file_array)
 
 for path in file_array:
-    data = read_secret.source_secret_file(path)
-    vault_request.call_vault_api(vault_address, vault_port, vault_root_token, data)
+    data = read_secret.source_secret_file(vault_address, vault_port, vault_root_token, path)
+    if data != False:
+        print("injecting secrets to vault")
+        vault_request.call_vault_api(vault_address, vault_port, vault_root_token, data)
