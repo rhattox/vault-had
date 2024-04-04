@@ -15,7 +15,7 @@ jobs:
       - run: |
           pip install pyinstaller
       - run: |
-          pyinstaller main.py
+          pyinstaller --onefile main.py
   
       # - name: Create a Release
       #   uses: elgohr/Github-Release-Action@v5
