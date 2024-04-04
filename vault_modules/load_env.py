@@ -21,14 +21,12 @@ def load_environments_variables():
     else:
         # testing vault connection
         url = f'http://{vault_address}:{vault_port}'
-        print(f"Testing the url '{url}'")
+        # print(f"Testing the url '{url}'")
         try: 
             response = requests.get(url)
         except requests.ConnectionError as e:
             print(f"Connection Error, provided ip '{vault_address}' seems unreachable")
             exit(1)
-        finally:
-            print("Vault is available to HTTP request")
 
     vault_root_token = os.getenv("VAULT_ROOT_TOKEN")
     
@@ -42,5 +40,6 @@ def load_environments_variables():
         print("secrets_dir isn't set")
         exit(1)
     
+    print("All Variables Loaded!")
     return vault_port, vault_address, vault_root_token, secrets_dir
 
