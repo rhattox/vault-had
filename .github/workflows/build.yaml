@@ -17,6 +17,9 @@ jobs:
           pip install pyinstaller
           pip install python-dotenv
           pip install requests
+          pip install yaml
+          pip install json
+          pip install os
       - run: |
           pyinstaller --onefile main.py
   
