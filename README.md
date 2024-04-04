@@ -33,3 +33,8 @@ secrets --> metadata.namespace --> metadata.name
 # Secrets as Files
 
 Not available yet
+
+
+# Todo
+
+1.  add test to vault IP before execute the script
