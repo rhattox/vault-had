@@ -21,7 +21,8 @@ def source_secret_file(file_path):
     namespace = yaml_data['metadata']['namespace']
     if namespace is None:
         print("metadata.namespace isn't set (yaml file)")
-        exit(1)
+        print("assuming 'default' metadata.namespace")
+        vault_obj['namespace'] = "default"
     vault_obj['namespace'] = namespace
     
     if yaml_data['data'] is None:
