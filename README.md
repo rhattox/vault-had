@@ -27,7 +27,8 @@ It has to have `namespace` metadata. If it doesn't it will assume the variable `
 `metadata.namespace` --> will be the KV secret path
 
 
-secrets --> metadata.namespace --> metadata.name
+vault url will be something like this:
+`<secrets>/<metadata.namespace>/<metadata.name>`
 
 
 # Secrets as Files
@@ -37,4 +38,7 @@ Not available yet
 
 # Todo
 
-1.  add test to vault IP before execute the script
+1. add test to vault IP before execute the script
+2. implement default namespace variable
+3. fix secrets path empty var
+
