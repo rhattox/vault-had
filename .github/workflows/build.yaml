@@ -6,7 +6,7 @@ on:
       - 'v*'
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: debian-10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
