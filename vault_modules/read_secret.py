@@ -30,15 +30,15 @@ def source_secret_file(vault_address, vault_port, vault_root_token, file_path):
         exit(1)
     
     # print(yaml_data['data'])
-    if yaml_data['data'] is None:
+    if yaml_data['stringData'] is None:
         print("data has no atribute, there is nothing to add")
         exit(1)
     else:
         data = {}
-        for lenght in yaml_data['data'].items():
+        for lenght in yaml_data['stringData'].items():
             data[f'{lenght[0]}'] = lenght[1]
     
-    vault_obj['data'] = data
+    vault_obj['stringData'] = data
     
     vault_injection = vault_request.check_vault_secret_engine(vault_address, vault_port, vault_root_token, vault_obj)
     # print(vault_injection)
